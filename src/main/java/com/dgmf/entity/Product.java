@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 
@@ -15,7 +16,8 @@ public class Product {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Calendar customerSince;
+    private BigDecimal price;
+    private Boolean inStock;
     // Hibernate will automatically take the
     // current Timestamp of the JVM
     @CreationTimestamp
