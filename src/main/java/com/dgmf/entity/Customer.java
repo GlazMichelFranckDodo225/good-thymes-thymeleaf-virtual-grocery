@@ -8,18 +8,17 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 
 @Entity
-@Table(name = "tbl_product")
+@Table(name = "tbl_customer")
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
-public class Product {
+public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private BigDecimal price;
-    private Boolean inStock;
+    private Calendar customerSince;
     // Hibernate will automatically take the
     // current Timestamp of the JVM
     @CreationTimestamp
